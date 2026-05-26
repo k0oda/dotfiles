@@ -1,9 +1,9 @@
 {{- $name := promptStringOnce . "name" "Git user name" -}}
 {{- $email := promptStringOnce . "email" "Git email" -}}
 
-{{- $enableDev := promptBoolOnce . "dev" "Enable development environment?" true -}}
-{{- $enableGaming := promptBoolOnce . "gaming" "Enable gaming packages?" true -}}
-{{- $enableContainers := promptBoolOnce . "containers" "Enable containers/docker?" true -}}
+{{- $enableDev := promptBoolOnce . "dev" "Enable development environment" true -}}
+{{- $enableGaming := promptBoolOnce . "gaming" "Enable gaming packages" true -}}
+{{- $enableContainers := promptBoolOnce . "containers" "Enable containers/docker" true -}}
 
 [data.user]
     name = {{ $name | quote }}
