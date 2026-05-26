@@ -1,0 +1,21 @@
+{{ if not (lookPath "niri") -}}
+.config/niri
+.config/systemd/user/niri.service.wants
+{{ end -}}
+
+{{ if not (lookPath "dms") -}}
+.config/DankMaterialShell
+.config/environment.d/90-dms.conf
+{{ end -}}
+
+{{ if not (lookPath "zed") -}}
+.config/zed
+{{ end -}}
+
+{{ if not (lookPath "lazydocker") -}}
+.config/lazydocker
+{{ end -}}
+
+{{ if not (lookPath "lazygit") -}}
+.config/lazygit
+{{ end -}}

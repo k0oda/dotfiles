@@ -1,0 +1,119 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# ═════════════════════════════════════════════════
+# Helpers
+# ═════════════════════════════════════════════════
+
+log() { echo "  [repos] $*"; }
+ok() { echo "  [repos] ✓ $*"; }
+skip() { echo "  [repos] · $* (already enabled)"; }
+
+copr_enabled() { dnf copr list --enabled 2>/dev/null | grep -qF "$1"; }
+repo_enabled()  { dnf repolist --enabled 2>/dev/null | grep -qF "$1"; }
+
+echo ""
+echo "══════════════════════════════════════════════"
+echo "  Bootstrapping repositories"
+echo "══════════════════════════════════════════════"
+
+# ═════════════════════════════════════════════════
+# COPR repositories
+# ═════════════════════════════════════════════════
+
+echo ""
+echo "-- COPR repositories -"
+
+{{ range .repositories.dnf.copr.repos -}}
+if copr_enabled {{ . | quote }}; then
+  skip {{ . | quote }}
+else
+  log "Enabling {{ . }}..."
+  sudo dnf copr enable -y {{ . | quote }}
+  ok {{ . | quote }}
+fi
+
+{{ end -}}
+
+# ═════════════════════════════════════════════════
+# RPM Fusion
+# ═════════════════════════════════════════════════
+
+echo ""
+echo "-- RPM Fusion repositories --"
+
+FEDORA_VER=$(rpm -E %fedora)
+
+if repo_enabled "rpmfusion-free"; then
+  skip "rpmfusion-free"
+else
+  log "Adding RPM Fusion Free..."
+  sudo dnf install -y \
+    "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-${FEDORA_VER}.noarch.rpm"
+  ok "rpmfusion-free"
+fi
+
+if repo_enabled "rpmfusion-nonfree"; then
+  skip "rpmfusion-nonfree"
+else
+  log "Adding RPM Fusion Non-Free..."
+  sudo dnf install -y \
+    "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-${FEDORA_VER}.noarch.rpm"
+  ok "rpmfusion-nonfree"
+fi
+
+log "Installing AppStream metadata..."
+sudo dnf install -y rpmfusion-free-appstream-data rpmfusion-nonfree-appstream-data
+
+log "Checking for updates..."
+sudo dnf check-update || true   # exits 100 when updates are available — that's fine
+
+log "Updating system..."
+sudo dnf update -y
+ok "System updated"
+
+# ═════════════════════════════════════════════════
+# Docker CE repository
+# ═════════════════════════════════════════════════
+
+{{ if .features.containers -}}
+echo ""
+echo "-- Docker CE repository --"
+
+if repo_enabled "docker-ce-stable"; then
+  skip "docker-ce-stable"
+else
+  log "Adding Docker CE repo..."
+  sudo dnf config-manager addrepo \
+    --from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo
+  ok "docker-ce-stable"
+fi
+{{ end -}}
+
+# ═════════════════════════════════════════════════
+# Flatpak
+# ═════════════════════════════════════════════════
+
+echo ""
+echo "-- Flatpak remotes --"
+
+if flatpak remotes 2>/dev/null | grep -q "^fedora"; then
+  log "Removing Fedora remote (prevents conflicts with Flathub)..."
+  flatpak remote-delete fedora
+  ok "Fedora remote removed"
+else
+  skip "Fedora remote (not present)"
+fi
+
+if flatpak remotes 2>/dev/null | grep -q "^flathub"; then
+  skip "flathub"
+else
+  log "Adding Flathub..."
+  flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+  ok "flathub"
+fi
+
+echo ""
+echo "  Repositories configured."
+echo ""

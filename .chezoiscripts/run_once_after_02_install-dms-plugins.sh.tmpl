@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+log() { echo "  [dms] $*"; }
+ok() { echo "  [dms] ✓ $*"; }
+skip() { echo "  [dms] · $*"; }
+
+echo ""
+echo "══════════════════════════════════════════════"
+echo "  Installing DMS plugins"
+echo "══════════════════════════════════════════════"
+
+# ═════════════════════════════════════════════════
+# Preflight check
+# ═════════════════════════════════════════════════
+
+echo ""
+echo "-- Preflight --"
+
+if ! command -v dms &>/dev/null; then
+  skip "dms not found — skipping."
+  exit 0
+fi
+
+# ═════════════════════════════════════════════════
+# Install plugins
+# ═════════════════════════════════════════════════
+
+echo ""
+echo "-- Installing plugins --"
+
+DMS_PLUGINS=(
+  {{- range $section, $data := .plugins.dms }}
+  {{- if ne $section "to_remove" }}
+  {{- if or (eq $section "common") (index $.features $section) }}
+  # -- {{ $section }} --
+  {{- range $data.plugins }}
+  {{ . | quote }}
+  {{- end }}
+  {{- end }}
+  {{- end }}
+  {{- end }}
+)
+
+if [[ ${#DMS_PLUGINS[@]} -eq 0 ]]; then
+  skip "No plugins to install."
+  exit 0
+fi
+
+log "Installing ${#DMS_PLUGINS[@]} plugin(s)..."
+dms plugins install "${DMS_PLUGINS[@]}"
+ok "DMS plugins installed"
+
+echo ""

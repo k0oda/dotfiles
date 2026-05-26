@@ -1,0 +1,32 @@
+# -----------------------------------------------------
+# ALIASES
+# -----------------------------------------------------
+
+# -----------------------------------------------------
+# General replacements
+# -----------------------------------------------------
+
+unalias lsa l ll la
+
+alias ls='eza --icons always'
+alias lsa="ls -a"
+
+alias l="ls"
+alias la="lsa"
+
+alias ll='ls -lh'
+alias lla='ll -a'
+
+alias lt='ls -T --level=2'
+alias lta="lt -a"
+
+alias cat="bat"
+
+# -----------------------------------------------------
+# Core utilities
+# -----------------------------------------------------
+
+# alias grep='rg --color=auto'
+alias diff='diff --color=auto'
+alias df='df -h'
+

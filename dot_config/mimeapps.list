@@ -1,0 +1,21 @@
+
+[Default Applications]
+text/html=helium.desktop
+x-scheme-handler/http=helium.desktop
+x-scheme-handler/https=helium.desktop
+x-scheme-handler/about=helium.desktop
+x-scheme-handler/unknown=helium.desktop
+x-scheme-handler/cider=Cider.desktop
+x-scheme-handler/itms=Cider.desktop
+x-scheme-handler/itmss=Cider.desktop
+x-scheme-handler/music=Cider.desktop
+x-scheme-handler/itunes=Cider.desktop
+x-scheme-handler/discord=vesktop.desktop
+image/jpeg=org.gnome.Loupe.desktop
+image/png=org.gnome.Loupe.desktop
+image/gif=org.gnome.Loupe.desktop
+image/webp=org.gnome.Loupe.desktop
+image/bmp=org.gnome.Loupe.desktop
+image/svg+xml=org.gnome.Loupe.desktop
+text/plain=org.gnome.TextEditor.desktop
+

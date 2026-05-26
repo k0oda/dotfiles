@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+# hash: {{ include "keyd-default.conf" | sha256sum }}
+
+set -euo pipefail
+
+log() { echo "  [keyd] $*"; }
+ok() { echo "  [keyd] ✓ $*"; }
+
+echo ""
+echo "══════════════════════════════════════════════"
+echo "  Setting up keyd"
+echo "══════════════════════════════════════════════"
+
+# ═════════════════════════════════════════════════
+# Deploy config
+# ═════════════════════════════════════════════════
+
+echo ""
+echo "-- Deploying config --"
+
+if [[ ! -d /etc/keyd ]]; then
+  log "Creating /etc/keyd..."
+  sudo mkdir -p /etc/keyd
+fi
+
+log "Copying keyd-default.conf → /etc/keyd/default.conf"
+sudo cp "{{ .chezmoi.sourceDir }}/keyd-default.conf" /etc/keyd/default.conf
+sudo chmod 644 /etc/keyd/default.conf
+sudo chown root:root /etc/keyd/default.conf
+ok "Config deployed"
+
+# ═════════════════════════════════════════════════
+# Restart / enable service
+# ═════════════════════════════════════════════════
+
+echo ""
+echo "-- keyd service --"
+
+if systemctl is-active --quiet keyd; then
+  log "Restarting keyd..."
+  sudo systemctl restart keyd
+  ok "keyd restarted"
+else
+  log "Enabling and starting keyd..."
+  sudo systemctl enable --now keyd
+  ok "keyd enabled and started"
+fi
+
+echo ""

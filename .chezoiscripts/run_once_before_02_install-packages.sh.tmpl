@@ -1,0 +1,169 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# ═════════════════════════════════════════════════
+# Helpers
+# ═════════════════════════════════════════════════
+
+log() { echo "  [pkgs] $*"; }
+ok() { echo "  [pkgs] ✓ $*"; }
+skip() { echo "  [pkgs] · $* (skipped)"; }
+
+echo ""
+echo "══════════════════════════════════════════════"
+echo "  Bootstrapping packages"
+echo "══════════════════════════════════════════════"
+
+# ═════════════════════════════════════════════════
+# DNF
+# ═════════════════════════════════════════════════
+
+echo ""
+echo "-- DNF --"
+
+{{- $dnfRemove := .packages.dnf.to_remove }}
+{{- if $dnfRemove }}
+DNF_REMOVE=(
+  {{- range $dnfRemove }}
+  {{ . | quote }}
+  {{- end }}
+)
+log "Removing {{ len $dnfRemove }} unwanted package(s)..."
+sudo dnf remove -y "${DNF_REMOVE[@]}"
+ok "Removed"
+{{ end }}
+
+DNF_PACKAGES=(
+  {{- range $section, $data := .packages.dnf }}
+  {{- if ne $section "to_remove" }}
+  {{- if or (eq $section "common") (index $.features $section) }}
+  # -- {{ $section }} --
+  {{- range $data.packages }}
+  {{ . | quote }}
+  {{- end }}
+  {{- end }}
+  {{- end }}
+  {{- end }}
+)
+
+log "Installing ${#DNF_PACKAGES[@]} package(s)..."
+sudo dnf install -y "${DNF_PACKAGES[@]}"
+ok "DNF done"
+
+# ═════════════════════════════════════════════════
+# Flatpak
+# ═════════════════════════════════════════════════
+
+echo ""
+echo "-- Flatpak --"
+
+{{- $flatpakRemove := .packages.flatpak.to_remove }}
+{{- if $flatpakRemove }}
+FLATPAK_REMOVE=(
+  {{- range $flatpakRemove }}
+  {{ . | quote }}
+  {{- end }}
+)
+log "Removing {{ len $flatpakRemove }} unwanted package(s)..."
+flatpak uninstall -y "${FLATPAK_REMOVE[@]}"
+ok "Removed"
+{{ end }}
+
+FLATPAK_PACKAGES=(
+  {{- range $section, $data := .packages.flatpak }}
+  {{- if ne $section "to_remove" }}
+  {{- if or (eq $section "common") (index $.features $section) }}
+  # -- {{ $section }} --
+  {{- range $data.packages }}
+  {{ . | quote }}
+  {{- end }}
+  {{- end }}
+  {{- end }}
+  {{- end }}
+)
+
+log "Installing ${#FLATPAK_PACKAGES[@]} package(s)..."
+flatpak install -y flathub "${FLATPAK_PACKAGES[@]}"
+ok "Flatpak done"
+
+# ═════════════════════════════════════════════════
+# Go
+# ═════════════════════════════════════════════════
+
+echo ""
+echo "-- Go --"
+
+{{- $goRemove := .packages.go.to_remove }}
+{{- if $goRemove }}
+GO_REMOVE=(
+  {{- range $goRemove }}
+  {{ . | quote }}
+  {{- end }}
+)
+log "Removing {{ len $goRemove }} unwanted package(s)..."
+for pkg in "${GO_REMOVE[@]}"; do
+  # derive binary name from the last path segment before @
+  bin=$(basename "${pkg%%@*}")
+  rm -f "$(go env GOPATH)/bin/${bin}"
+  log "Removed binary: ${bin}"
+done
+ok "Removed"
+{{ end }}
+
+GO_PACKAGES=(
+  {{- range $section, $data := .packages.go }}
+  {{- if ne $section "to_remove" }}
+  {{- if or (eq $section "common") (index $.features $section) }}
+  # -- {{ $section }} --
+  {{- range $data.packages }}
+  {{ . | quote }}
+  {{- end }}
+  {{- end }}
+  {{- end }}
+  {{- end }}
+)
+
+if [[ ${#GO_PACKAGES[@]} -gt 0 ]]; then
+  log "Installing ${#GO_PACKAGES[@]} package(s)..."
+  for pkg in "${GO_PACKAGES[@]}"; do
+    log "go install ${pkg}"
+    go install "${pkg}"
+  done
+  ok "Go done"
+else
+  log "No Go packages to install."
+fi
+
+# ═════════════════════════════════════════════════
+# Curl
+# ═════════════════════════════════════════════════
+
+echo ""
+echo "-- Curl --"
+
+{{- range $section, $data := .packages.curl }}
+{{- if or (eq $section "common") (index $.features $section) }}
+{{- range $data.packages }}
+
+# {{ .name }}
+{{- if .check }}
+if command -v {{ .check | quote }} &>/dev/null; then
+  skip {{ .name | quote }}
+else
+  log "Installing {{ .name }}..."
+  curl -fsSL {{ .url | quote }} | sh
+  ok {{ .name | quote }}
+fi
+{{- else }}
+log "Installing {{ .name }}..."
+curl -fsSL {{ .url | quote }} | sh
+ok {{ .name | quote }}
+{{- end }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+echo ""
+echo "  All packages installed."
+echo ""

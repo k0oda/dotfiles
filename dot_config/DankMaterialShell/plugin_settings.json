@@ -1,0 +1,17 @@
+{
+  "calculator": {
+    "enabled": true,
+    "trigger": "="
+  },
+  "webSearch": {
+    "enabled": true,
+    "searchEngines": [],
+    "disabledEngines": []
+  },
+  "ephemera": {
+    "enabled": true,
+    "provider": "gemini",
+    "model": "gemini-3-flash-preview",
+    "systemPrompt": ""
+  }
+}

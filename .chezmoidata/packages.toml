@@ -1,0 +1,136 @@
+[packages.dnf]
+
+    to_remove = []
+
+    [packages.dnf.common]
+        packages = [
+            "7zip",
+            "7zip-standalone",
+            "adw-gtk3-theme",
+            "bat",
+            "cava",
+            "cliphist",
+            "dnf5-plugins",
+            "dsearch",
+            "eza",
+            "fastfetch",
+            "fd",
+            "fuse",
+            "fuse-libs",
+            "fzf",
+            "golang",
+            "khal",
+            "libappindicator-gtk3",
+            "libdbusmenu-gtk3",
+            "neovim-default-editor",
+            "nvim",
+            "openssl",
+            "python3-pip",
+            "qt5ct",
+            "qt5-qtsvg",
+            "qt6ct",
+            "qt6-multimedia",
+            "qt6-qtmultimedia",
+            "ripgrep",
+            "symlinks",
+            "tree-sitter-cli",
+            "unrar",
+            "wl-clipboard",
+            "xdg-terminal-exec",
+            "xrandr",
+            "zsh",
+        ]
+
+    [packages.dnf.dev]
+        packages = [
+            "gcc-c++",
+            "kmodtool",
+            "lazygit",
+            "libuv-devel",
+            "luarocks",
+            "python3-aiohttp-oauthlib",
+            "python3-vdirsyncer",
+            "sqlite-devel",
+        ]
+
+    [packages.dnf.containers]
+        packages = [
+            "containerd.io",
+            "docker-buildx-plugin",
+            "docker-ce",
+            "docker-ce-cli",
+            "docker-compose-plugin",
+        ]
+
+    [packages.dnf.gaming]
+        packages = [
+            "faugus-launcher",
+            "gamemode",
+            "gamescope",
+            "steam",
+            "wine-core",
+            "wine-core.i686",
+        ]
+
+[packages.go]
+
+    to_remove = []
+
+    # [packages.go.common]
+    #     packages = []
+
+    # [packages.go.dev]
+    #     packages = []
+
+    [packages.go.containers]
+        packages = [
+            "github.com/jesseduffield/lazydocker@latest",
+        ]
+
+    # [packages.go.gaming]
+    #     packages = []
+
+[packages.flatpak]
+
+    to_remove = []
+
+    [packages.flatpak.common]
+        packages = [
+            "com.github.tchx84.Flatseal",
+            "it.mijorus.gearlever",
+            "org.telegram.desktop",
+        ]
+
+    [packages.flatpak.dev]
+        packages = [
+            "com.usebruno.Bruno",
+        ]
+
+    # [packages.flatpak.containers]
+    #     packages = []
+
+    # [packages.flatpak.gaming]
+    #     packages = []
+
+[packages.curl]
+
+    [packages.curl.common]
+        packages = [
+            {
+                name = "Rustup",
+                url = "https://sh.rustup.rs",
+                check = "rustup"
+            },
+        ]
+
+    [packages.curl.dev]
+        packages = [
+            {
+                name = "Zed",
+                url = "https://zed.dev/install.sh",
+                check = "zed"
+            },
+        ]
+
+    # [packages.curl.gaming]
+    #     packages = []

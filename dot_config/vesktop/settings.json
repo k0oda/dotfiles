@@ -1,0 +1,8 @@
+{
+    "splashColor": "rgb(193, 199, 206)",
+    "splashBackground": "rgb(16, 20, 23)",
+    "clickTrayToShowHide": true,
+    "staticTitle": false,
+    "customTitleBar": false,
+    "arRPC": false
+}

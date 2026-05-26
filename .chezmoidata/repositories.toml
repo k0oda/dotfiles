@@ -1,0 +1,12 @@
+[repositories.dnf]
+
+    [repositories.dnf.copr]
+        repos = [
+            "alternateved/keyd",
+            "avengemedia/danklinux",
+            "avengemedia/dms",
+            "dejan/lazygit",
+            "faugus/faugus-launcher",
+            "vitallium/neovim-default-editor",
+            "yalter/niri",
+        ]

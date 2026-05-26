@@ -1,0 +1,8 @@
+// DMS Window Rules - Managed by DankMaterialShell
+// Do not edit manually - changes may be overwritten
+
+// @id=wr_1776797902536173815 @name=org.telegram.desktop
+window-rule {
+    match app-id="^org.telegram.desktop$"
+    open-floating true
+}

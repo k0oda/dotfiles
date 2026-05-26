@@ -1,0 +1,14 @@
+[plugins.dms]
+
+    [plugins.dms.common]
+        plugins = [
+            "calculator",
+            "ephemera",
+            "webSearch",
+        ]
+
+    # [plugins.dms.dev]
+    #     plugins = []
+
+    # [plugins.dms.gaming]
+    #     plugins = []
