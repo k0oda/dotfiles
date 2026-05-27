@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# hash: {{ include "keyd-default.conf" | sha256sum }}
+# hash: {{ include "dot_config/keyd-default.conf" | sha256sum }}
 
 set -euo pipefail
 
@@ -25,7 +25,7 @@ if [[ ! -d /etc/keyd ]]; then
 fi
 
 log "Copying keyd-default.conf → /etc/keyd/default.conf"
-sudo cp "{{ .chezmoi.sourceDir }}/keyd-default.conf" /etc/keyd/default.conf
+sudo cp "{{ .chezmoi.sourceDir }}/dot_config/keyd-default.conf" /etc/keyd/default.conf
 sudo chmod 644 /etc/keyd/default.conf
 sudo chown root:root /etc/keyd/default.conf
 ok "Config deployed"

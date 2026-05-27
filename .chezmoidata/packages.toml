@@ -122,6 +122,11 @@
                 url = "https://sh.rustup.rs",
                 check = "rustup"
             },
+            {
+                name = "Oh My Posh",
+                url = "https://ohmyposh.dev/install.sh",
+                check = "oh-my-posh"
+            }
         ]
 
     [packages.curl.dev]
