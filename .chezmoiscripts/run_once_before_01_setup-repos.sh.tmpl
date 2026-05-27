@@ -8,7 +8,7 @@ set -euo pipefail
 
 log() { echo "  [repos] $*"; }
 ok() { echo "  [repos] ✓ $*"; }
-skip() { echo "  [repos] · $* (already enabled)"; }
+skip() { echo "  [repos] · $* (skipped)"; }
 
 copr_enabled() { dnf copr list --enabled 2>/dev/null | grep -qF "$1"; }
 repo_enabled()  { dnf repolist --enabled 2>/dev/null | grep -qF "$1"; }
