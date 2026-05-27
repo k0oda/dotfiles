@@ -50,9 +50,15 @@ fi
 
 log "Installing ${#DMS_PLUGINS[@]} plugin(s)..."
 
+INSTALLED_PLUGINS=$(dms plugins list)
+
 for plugin in "${DMS_PLUGINS[@]}"; do
-  log "Installing plugin: $plugin"
-  dms plugins install "$plugin"
+  if echo "$INSTALLED_PLUGINS" | grep -riq "ID: ${plugin}"; then
+    skip "Plugin $plugin is already installed, skipping..."
+  else
+    log "Installing plugin: $plugin"
+    dms plugins install "$plugin"
+  fi
 done
 
 ok "DMS plugins installed"
