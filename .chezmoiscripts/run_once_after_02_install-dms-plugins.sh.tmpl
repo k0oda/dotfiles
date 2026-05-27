@@ -49,7 +49,12 @@ if [[ ${#DMS_PLUGINS[@]} -eq 0 ]]; then
 fi
 
 log "Installing ${#DMS_PLUGINS[@]} plugin(s)..."
-dms plugins install "${DMS_PLUGINS[@]}"
+
+for plugin in "${DMS_PLUGINS[@]}"; do
+  log "Installing plugin: $plugin"
+  dms plugins install "$plugin"
+done
+
 ok "DMS plugins installed"
 
 echo ""

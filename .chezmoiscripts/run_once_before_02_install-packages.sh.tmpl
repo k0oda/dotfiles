@@ -84,7 +84,7 @@ FLATPAK_PACKAGES=(
 )
 
 log "Installing ${#FLATPAK_PACKAGES[@]} package(s)..."
-flatpak install -y flathub "${FLATPAK_PACKAGES[@]}"
+flatpak install -y --user flathub "${FLATPAK_PACKAGES[@]}"
 ok "Flatpak done"
 
 # ═════════════════════════════════════════════════
