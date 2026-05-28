@@ -37,6 +37,21 @@ log "Running installer..."
 ok "WhiteSur icons installed"
 
 # ═════════════════════════════════════════════════
+# Apply
+# ═════════════════════════════════════════════════
+
+echo ""
+echo "-- Gsettings --"
+
+if command -v gsettings &>/dev/null; then
+  log "Applying to gsettings..."
+  gsettings set org.gnome.desktop.interface icon-theme "WhiteSur"
+  ok "Icon theme applied"
+else
+  skip "gsettings not available"
+fi
+
+# ═════════════════════════════════════════════════
 # Update icon cache
 # ═════════════════════════════════════════════════
 
