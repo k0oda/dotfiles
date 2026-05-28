@@ -98,20 +98,29 @@ fi
 echo ""
 echo "-- Flatpak remotes --"
 
-if flatpak remotes 2>/dev/null | grep -q "^fedora"; then
-  log "Removing Fedora remote (prevents conflicts with Flathub)..."
-  flatpak remote-delete fedora
-  ok "Fedora remote removed"
-else
-  skip "Fedora remote (not present)"
+if flatpak remotes --system 2>/dev/null | grep -q "^fedora"; then
+  log "Removing Fedora SYSTEM remote..."
+  sudo flatpak remote-delete --system fedora
+fi
+if flatpak remotes --user 2>/dev/null | grep -q "^fedora"; then
+  log "Removing Fedora USER remote..."
+  flatpak remote-delete --user fedora
 fi
 
-if flatpak remotes 2>/dev/null | grep -q "^flathub"; then
-  skip "flathub"
+if flatpak remotes --system 2>/dev/null | grep -q "^flathub"; then
+  skip "Flathub SYSTEM remote"
 else
-  log "Adding Flathub..."
-  flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-  ok "flathub"
+  log "Adding Flathub SYSTEM remote..."
+  sudo flatpak remote-add --if-not-exists --system flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+  ok "Flathub SYSTEM added"
+fi
+
+if flatpak remotes --user 2>/dev/null | grep -q "^flathub"; then
+  skip "Flathub USER remote"
+else
+  log "Adding Flathub USER remote..."
+  flatpak remote-add --if-not-exists --user flathub  https://dl.flathub.org/repo/flathub.flatpakrepo
+  ok "Flathub USER added"
 fi
 
 echo ""
