@@ -48,7 +48,7 @@ DNF_PACKAGES=(
 )
 
 log "Installing ${#DNF_PACKAGES[@]} package(s)..."
-sudo dnf install -y "${DNF_PACKAGES[@]} --allowerasing"
+sudo dnf install -y --allowerasing "${DNF_PACKAGES[@]}"
 ok "DNF done"
 
 # ═════════════════════════════════════════════════
