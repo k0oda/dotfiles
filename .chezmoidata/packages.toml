@@ -21,6 +21,7 @@
             "fzf",
             "git",
             "golang",
+            "keyd",
             "khal",
             "libappindicator-gtk3",
             "libdbusmenu-gtk3",
