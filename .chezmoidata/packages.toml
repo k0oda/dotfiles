@@ -21,6 +21,7 @@
             "fzf",
             "git",
             "golang",
+            "hyprland-guiutils",
             "keyd",
             "khal",
             "libappindicator-gtk3",
@@ -39,6 +40,7 @@
             "unrar",
             "wl-clipboard",
             "xdg-terminal-exec",
+            "xdg-desktop-portal-hyprland",
             "xrandr",
             "zsh",
         ]
@@ -101,6 +103,7 @@
             "com.github.tchx84.Flatseal",
             "it.mijorus.gearlever",
             "org.telegram.desktop",
+            "com.danklinux.dankcalendar",
         ]
 
     [packages.flatpak.dev]
