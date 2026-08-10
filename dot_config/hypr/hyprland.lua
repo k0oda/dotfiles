@@ -11,7 +11,6 @@ end)
 
 hl.on("hyprland.start", function()
 	hl.exec_cmd("xrdb -merge ~/.Xresources")
-	hl.exec_cmd("sleep 3 && dex-autostart  -a -s ~/.config/autostart/")
 end)
 
 hl.env("QT_QPA_PLATFORM", "wayland;xcb")
