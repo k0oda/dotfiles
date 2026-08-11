@@ -1,17 +1,44 @@
 {
   "calculator": {
     "enabled": true,
-    "trigger": "="
+    "trigger": "",
+    "noTrigger": false
   },
   "webSearch": {
     "enabled": true,
     "searchEngines": [],
-    "disabledEngines": []
+    "disabledEngines": [
+      "duckduckgo",
+      "brave",
+      "bing",
+      "kagi",
+      "youtube",
+      "github",
+      "stackoverflow",
+      "reddit",
+      "wikipedia",
+      "amazon",
+      "ebay",
+      "maps",
+      "images",
+      "twitter",
+      "linkedin",
+      "imdb",
+      "archlinux",
+      "aur",
+      "nixpkgs",
+      "nixopts",
+      "npmjs",
+      "pypi",
+      "crates",
+      "mdn"
+    ]
   },
   "ephemera": {
     "enabled": true,
     "provider": "gemini",
     "model": "gemini-3-flash-preview",
-    "systemPrompt": ""
+    "systemPrompt": "",
+    "maxTokens": 0
   }
 }
