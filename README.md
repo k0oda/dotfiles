@@ -1,7 +1,8 @@
 # dotfiles
 
 Personal system configuration, managed with [chezmoi].
-Fedora · niri · DankMaterialShell · Neovim · Zed · kitty · zsh
+
+Fedora · Hyprland · DankMaterialShell · Neovim · Zed · kitty · zsh
 
 ---
 
@@ -10,7 +11,7 @@ Fedora · niri · DankMaterialShell · Neovim · Zed · kitty · zsh
 | Layer | Tool |
 |---|---|
 | Distro | Fedora |
-| Compositor | [niri] |
+| Compositor | [Hyprland] |
 | Shell | [DankMaterialShell] |
 | Terminal | [kitty] |
 | Editor | [Neovim] + [Zed] |
@@ -74,7 +75,7 @@ after_02   ->  DMS plugins installed
 after_03   ->  keyd config deployed & service started
 ```
 
-Config directories for `niri` and `DankMaterialShell` are skipped automatically
+Config directories for `Hyprland` and `DankMaterialShell` are skipped automatically
 if aren't installed.
 
 ---
@@ -90,7 +91,7 @@ Fetched automatically by chezmoi via `.chezmoiexternal.toml`:
 ---
 
 [chezmoi]: https://www.chezmoi.io/
-[niri]: https://github.com/YaLTeR/niri
+[Hyprland]: https://hypr.land/
 [DankMaterialShell]: https://danklinux.com/
 [kitty]: https://sw.kovidgoyal.net/kitty/
 [Neovim]: https://neovim.io/
