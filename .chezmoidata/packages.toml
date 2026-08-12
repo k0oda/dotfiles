@@ -104,6 +104,7 @@
             "it.mijorus.gearlever",
             "org.telegram.desktop",
             "com.danklinux.dankcalendar",
+            "app.zen_browser.zen",
         ]
 
     [packages.flatpak.dev]
