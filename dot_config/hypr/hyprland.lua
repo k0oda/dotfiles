@@ -89,7 +89,7 @@ hl.window_rule({ match = { class = "^(org\\.gnome\\.)" }, rounding = 12 })
 hl.window_rule({ match = { class = "^(gnome-control-center)$" }, tile = true })
 hl.window_rule({ match = { class = "^(pavucontrol)$" }, tile = true })
 hl.window_rule({ match = { class = "^(nm-connection-editor)$" }, tile = true })
-hl.window_rule({ match = { class = "^(org\\.gnome\\.Calculator)$" }, float = true })
+hl.window_rule({ match = { class = "^(org\\.gnome\\.Calculator)$" }, float = true, size = { 360, 520 } })
 hl.window_rule({ match = { class = "^(gnome-calculator)$" }, float = true })
 hl.window_rule({ match = { class = "^(galculator)$" }, float = true })
 hl.window_rule({ match = { class = "^(blueman-manager)$" }, float = true })
@@ -106,6 +106,7 @@ hl.window_rule({
 	float = true,
 })
 hl.window_rule({ match = { class = "^(zoom)$" }, float = true })
+hl.window_rule({ match = { class = "^(hyprland-share-picker)$" }, float = true, size = { 500, 290 } })
 hl.layer_rule({ match = { namespace = "^(quickshell)$" }, no_anim = true })
 hl.layer_rule({ match = { namespace = "^dms:.*" }, no_anim = true })
 

@@ -3,7 +3,7 @@
 hl.unbind("SUPER + SHIFT + Backslash")
 hl.bind("SUPER + SHIFT + Backslash", hl.dsp.exec_cmd("sh -c \"dms ipc call plugins toggle ephemera\""), { description = "Ephemera" })
 hl.unbind("SUPER + B")
-hl.bind("SUPER + B", hl.dsp.exec_cmd("gtk-launch helium"), { description = "Helium" })
+hl.bind("SUPER + B", hl.dsp.exec_cmd("gtk-launch app.zen_browser.zen"), { description = "Zen" })
 hl.unbind("SUPER + E")
 hl.bind("SUPER + E", hl.dsp.exec_cmd("nautilus"), { description = "Files" })
 hl.unbind("SUPER + SHIFT + E")
