@@ -49,6 +49,11 @@
     "showToolbarBorder": false,
     "show_shortcut_hints": false,
     "modalDisplayMode": "modal",
-    "modalScaleToContent": true
+    "modalScaleToContent": true,
+    "recordMic": false,
+    "recordSystemAudio": true,
+    "showToolbar": true,
+    "skipConfirm": false,
+    "postNotification": "notification"
   }
 }

@@ -164,7 +164,7 @@
         {
           "id": "systemTray",
           "enabled": true,
-          "trayUseInlineExpansion": false,
+          "trayUseInlineExpansion": true,
           "trayPopupSingleLine": true,
           "trayAutoOverflow": true,
           "trayMaxVisibleItems": 0
@@ -249,7 +249,8 @@
       "islandUseOverlayLayer": false,
       "islandHomeClockDisplay": "time",
       "islandPalette": "default",
-      "islandTransparency": 1
+      "islandTransparency": 1,
+      "islandSatellitePosition": "edges"
     }
   ],
   "desktopClockCustomColor": {
