@@ -80,7 +80,7 @@
                 "terminal.bright_foreground": "#f8faff",
                 "terminal.dim_foreground": "#c4c6d0",
                 "terminal.ansi.black": "#111318",
-                "terminal.ansi.bright_black": "#999da5",
+                "terminal.ansi.bright_black": "#3f4248",
                 "terminal.ansi.dim_black": "#111318",
                 "terminal.ansi.red": "#ff7299",
                 "terminal.ansi.bright_red": "#ff9fba",
@@ -205,12 +205,12 @@
                         "font_weight": null
                     },
                     "comment": {
-                        "color": "#999da5",
+                        "color": "#3f4248",
                         "font_style": "italic",
                         "font_weight": null
                     },
                     "comment.doc": {
-                        "color": "#999da5",
+                        "color": "#3f4248",
                         "font_style": "italic",
                         "font_weight": null
                     },
@@ -459,7 +459,7 @@
                 "terminal.bright_foreground": "#d4d6d9",
                 "terminal.dim_foreground": "#44474e",
                 "terminal.ansi.black": "#111318",
-                "terminal.ansi.bright_black": "#77797b",
+                "terminal.ansi.bright_black": "#000003",
                 "terminal.ansi.dim_black": "#111318",
                 "terminal.ansi.red": "#893049",
                 "terminal.ansi.bright_red": "#ae516b",
@@ -471,7 +471,7 @@
                 "terminal.ansi.bright_yellow": "#bcb52e",
                 "terminal.ansi.dim_yellow": "#ada721",
                 "terminal.ansi.blue": "#426098",
-                "terminal.ansi.bright_blue": "#4e6eaf",
+                "terminal.ansi.bright_blue": "#4e6fb0",
                 "terminal.ansi.dim_blue": "#426098",
                 "terminal.ansi.magenta": "#d3e2ff",
                 "terminal.ansi.bright_magenta": "#d3e2ff",
@@ -584,12 +584,12 @@
                         "font_weight": null
                     },
                     "comment": {
-                        "color": "#77797b",
+                        "color": "#000003",
                         "font_style": "italic",
                         "font_weight": null
                     },
                     "comment.doc": {
-                        "color": "#77797b",
+                        "color": "#000003",
                         "font_style": "italic",
                         "font_weight": null
                     },
@@ -838,7 +838,7 @@
                 "terminal.bright_foreground": "#f8faff",
                 "terminal.dim_foreground": "#c4c6d0",
                 "terminal.ansi.black": "#111318",
-                "terminal.ansi.bright_black": "#999da5",
+                "terminal.ansi.bright_black": "#3f4248",
                 "terminal.ansi.dim_black": "#111318",
                 "terminal.ansi.red": "#ff7299",
                 "terminal.ansi.bright_red": "#ff9fba",
@@ -963,12 +963,12 @@
                         "font_weight": null
                     },
                     "comment": {
-                        "color": "#999da5",
+                        "color": "#3f4248",
                         "font_style": "italic",
                         "font_weight": null
                     },
                     "comment.doc": {
-                        "color": "#999da5",
+                        "color": "#3f4248",
                         "font_style": "italic",
                         "font_weight": null
                     },
@@ -1217,7 +1217,7 @@
                 "terminal.bright_foreground": "#d4d6d9",
                 "terminal.dim_foreground": "#44474e",
                 "terminal.ansi.black": "#111318",
-                "terminal.ansi.bright_black": "#77797b",
+                "terminal.ansi.bright_black": "#000003",
                 "terminal.ansi.dim_black": "#111318",
                 "terminal.ansi.red": "#893049",
                 "terminal.ansi.bright_red": "#ae516b",
@@ -1229,7 +1229,7 @@
                 "terminal.ansi.bright_yellow": "#bcb52e",
                 "terminal.ansi.dim_yellow": "#ada721",
                 "terminal.ansi.blue": "#426098",
-                "terminal.ansi.bright_blue": "#4e6eaf",
+                "terminal.ansi.bright_blue": "#4e6fb0",
                 "terminal.ansi.dim_blue": "#426098",
                 "terminal.ansi.magenta": "#d3e2ff",
                 "terminal.ansi.bright_magenta": "#d3e2ff",
@@ -1342,12 +1342,12 @@
                         "font_weight": null
                     },
                     "comment": {
-                        "color": "#77797b",
+                        "color": "#000003",
                         "font_style": "italic",
                         "font_weight": null
                     },
                     "comment.doc": {
-                        "color": "#77797b",
+                        "color": "#000003",
                         "font_style": "italic",
                         "font_weight": null
                     },

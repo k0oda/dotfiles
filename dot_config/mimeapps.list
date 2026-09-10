@@ -45,6 +45,7 @@ x-scheme-handler/itunes=Cider.desktop
 x-scheme-handler/mailto=org.gnome.Geary.desktop
 x-scheme-handler/music=Cider.desktop
 x-scheme-handler/unknown=helium.desktop
+x-scheme-handler/calendar=dms-open.desktop
 
 [Added Associations]
 application/json=nvim.desktop;
@@ -79,6 +80,7 @@ video/x-msvideo=org.gnome.Showtime.desktop;
 x-scheme-handler/http=app.zen_browser.zen.desktop;
 x-scheme-handler/https=app.zen_browser.zen.desktop;
 x-scheme-handler/mailto=org.gnome.Geary.desktop;
+x-scheme-handler/calendar=dms-open.desktop;
 
 [Removed Associations]
 

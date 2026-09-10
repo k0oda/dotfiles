@@ -39,6 +39,16 @@
     "provider": "gemini",
     "model": "gemini-3-flash-preview",
     "systemPrompt": "",
-    "maxTokens": 0
+    "maxTokens": 0,
+    "panelOnLeft": false
+  },
+  "quickCapture": {
+    "enabled": true,
+    "showPillBorder": false,
+    "toolbarPosition": "top",
+    "showToolbarBorder": false,
+    "show_shortcut_hints": false,
+    "modalDisplayMode": "modal",
+    "modalScaleToContent": true
   }
 }

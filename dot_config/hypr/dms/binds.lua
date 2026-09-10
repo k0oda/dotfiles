@@ -177,6 +177,6 @@ hl.bind("SUPER + SHIFT + minus", hl.dsp.window.resize({ x = 0, y = -100, relativ
 hl.bind("SUPER + SHIFT + equal", hl.dsp.window.resize({ x = 0, y = 100, relative = true }), { repeating = true })
 
 -- === Screenshots ===
-hl.bind("Print", hl.dsp.exec_cmd("dms screenshot"))
-hl.bind("CTRL + Print", hl.dsp.exec_cmd("dms screenshot full"))
-hl.bind("ALT + Print", hl.dsp.exec_cmd("dms screenshot window"))
+hl.bind("Print", hl.dsp.exec_cmd("dms ipc call quickCapture screenshot region edit"))
+hl.bind("CTRL + Print", hl.dsp.exec_cmd("dms ipc call quickCapture screenshot full edit"))
+hl.bind("ALT + Print", hl.dsp.exec_cmd("dms ipc call quickCapture screenshot window edit"))

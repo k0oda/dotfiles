@@ -5,6 +5,7 @@
             "calculator",
             "ephemera",
             "webSearch",
+            "quickCapture",
         ]
 
     # [plugins.dms.dev]

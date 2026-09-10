@@ -516,7 +516,9 @@
             "enabled": false
         },
         "WebKeybinds": {
-            "enabled": true
+            "enabled": true,
+            "showNavigationButtons": true,
+            "overrideCommonKeybinds": true
         },
         "WebScreenShareFixes": {
             "enabled": true
@@ -559,6 +561,9 @@
         },
         "MusicRichPresence": {
             "enabled": false
+        },
+        "TenorGifSearch": {
+            "enabled": false
         }
     },
     "uiElements": {
@@ -575,7 +580,7 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1786219289777
+        "settingsSyncVersion": 1788508239111
     },
     "windowsMaterial": "none"
 }
