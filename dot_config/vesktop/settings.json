@@ -1,6 +1,6 @@
 {
-    "splashColor": "rgb(228, 225, 233)",
-    "splashBackground": "rgb(31, 31, 37)",
+    "splashColor": "rgb(226, 226, 233)",
+    "splashBackground": "rgb(30, 32, 37)",
     "clickTrayToShowHide": true,
     "staticTitle": false,
     "customTitleBar": false,

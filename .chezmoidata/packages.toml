@@ -43,6 +43,7 @@
             "tree-sitter-cli",
             "unrar",
             "wl-clipboard",
+            "wl-clipboard-persist",
             "xdg-terminal-exec",
             "xdg-desktop-portal-hyprland",
             "xrandr",

@@ -9,4 +9,5 @@
             "faugus/faugus-launcher",
             "vitallium/neovim-default-editor",
             "lionheartp/Hyprland",
+            "leloubil/wl-clip-persist",
         ]

@@ -11,6 +11,7 @@ end)
 
 hl.on("hyprland.start", function()
 	hl.exec_cmd("xrdb -merge ~/.Xresources")
+	hl.exec_cmd("wl-clip-persist --clipboard regular")
 end)
 
 hl.env("QT_QPA_PLATFORM", "wayland;xcb")
