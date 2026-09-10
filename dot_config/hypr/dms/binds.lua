@@ -1,5 +1,8 @@
 -- DMS default keybinds (Hyprland 0.55+ Lua)
 
+hl.unbind("SUPER + SHIFT + Backslash")
+hl.unbind("SUPER + SHIFT + E")
+
 hl.unbind("XF86Tools")
 hl.bind("XF86Tools", hl.dsp.exec_cmd("exec hyprctl switchxkblayout current next"))
 
@@ -12,10 +15,14 @@ hl.bind("SUPER + M", hl.dsp.exec_cmd("dms ipc call processlist focusOrToggle"))
 hl.bind("SUPER + comma", hl.dsp.exec_cmd("dms ipc call settings focusOrToggle"))
 hl.bind("SUPER + N", hl.dsp.exec_cmd("dms ipc call notifications toggle"))
 hl.bind("SUPER + SHIFT + N", hl.dsp.exec_cmd("dms ipc call notepad toggle"))
-hl.bind("SUPER + Y", hl.dsp.exec_cmd("dms ipc call dash toggle wallpaper"))
 hl.bind("SUPER + TAB", hl.dsp.exec_cmd("dms ipc call hypr toggleOverview"))
 hl.bind("SUPER + O", hl.dsp.exec_cmd("dms ipc call hypr toggleOverview"))
 hl.bind("SUPER + X", hl.dsp.exec_cmd("dms ipc call powermenu toggle"))
+hl.bind("SUPER + T", hl.dsp.exec_cmd('dms ipc call dash toggle ""'))
+hl.bind("SUPER + Y", hl.dsp.exec_cmd("dms ipc call dash toggle wallpaper"))
+hl.bind("SUPER + G", hl.dsp.exec_cmd("dms ipc call control-center toggle"))
+hl.bind("SUPER + E", hl.dsp.exec_cmd("dms ipc call defaultApp fileManager"))
+hl.bind("SUPER + B", hl.dsp.exec_cmd("dms ipc call defaultApp browser"))
 
 -- === Cheat sheet
 hl.bind("SUPER + SHIFT + Slash", hl.dsp.exec_cmd("dms ipc call keybinds toggle hyprland"))
