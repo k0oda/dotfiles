@@ -2,6 +2,8 @@
 
 Personal system configuration, managed with [chezmoi].
 
+This setup is intended for **PERSONAL** use only. It may install required packages and be invasive at all. Read sources carefully before applying.
+
 Fedora · Hyprland · DankMaterialShell · Neovim · Zed · kitty · zsh
 
 ---
