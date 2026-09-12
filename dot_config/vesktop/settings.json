@@ -4,5 +4,5 @@
     "clickTrayToShowHide": true,
     "staticTitle": false,
     "customTitleBar": false,
-    "arRPC": false
+    "arRPC": true
 }

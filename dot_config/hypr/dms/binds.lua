@@ -23,6 +23,7 @@ hl.bind("SUPER + Y", hl.dsp.exec_cmd("dms ipc call dash toggle wallpaper"))
 hl.bind("SUPER + G", hl.dsp.exec_cmd("dms ipc call control-center toggle"))
 hl.bind("SUPER + E", hl.dsp.exec_cmd("dms ipc call defaultApp fileManager"))
 hl.bind("SUPER + B", hl.dsp.exec_cmd("dms ipc call defaultApp browser"))
+hl.bind("SUPER + SHIFT + Backslash", hl.dsp.exec_cmd("dms ipc call plugins toggle ephemera"))
 
 -- === Cheat sheet
 hl.bind("SUPER + SHIFT + Slash", hl.dsp.exec_cmd("dms ipc call keybinds toggle hyprland"))
