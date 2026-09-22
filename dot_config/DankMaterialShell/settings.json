@@ -86,7 +86,7 @@
       "cursorHideTimeout": 0
     }
   },
-  "monoFontFamily": "JetBrainsMono Nerd Font",
+  "monoFontFamily": "JetBrainsMono Nerd Font Mono",
   "useSystemSoundTheme": true,
   "batteryCriticalNotificationType": 0,
   "matugenTemplateNeovim": true,
@@ -249,7 +249,8 @@
       "islandHomeClockDisplay": "time",
       "islandPalette": "default",
       "islandTransparency": 1,
-      "islandSatellitePosition": "edges"
+      "islandSatellitePosition": "edges",
+      "islandSatelliteBackground": false
     }
   ],
   "desktopClockCustomColor": {

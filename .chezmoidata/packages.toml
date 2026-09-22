@@ -11,6 +11,7 @@
             "cava",
             "cliphist",
             "curl",
+            "dankcalendar-git",
             "dnf5-plugins",
             "dsearch",
             "eza",
@@ -109,7 +110,6 @@
             "com.github.tchx84.Flatseal",
             "it.mijorus.gearlever",
             "org.telegram.desktop",
-            "com.danklinux.dankcalendar",
             "app.zen_browser.zen",
         ]
 

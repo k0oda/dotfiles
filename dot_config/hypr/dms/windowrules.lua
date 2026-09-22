@@ -9,6 +9,3 @@ hl.window_rule({ match = { class = "^app.zen_browser.zen$", title = "^Карти
 
 -- DMS-RULE: id=dms-floating-windows, name=DMS Floating Windows
 hl.window_rule({ match = { class = "^com.danklinux.dms$" }, float = true })
-
--- DMS-RULE: id=wr_1788804133569706720, name=DesktopPets
-hl.window_rule({ match = { class = "^DesktopPets$" }, no_blur = true })
