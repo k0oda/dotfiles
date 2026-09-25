@@ -167,3 +167,23 @@ ok {{ .name | quote }}
 echo ""
 echo "  All packages installed."
 echo ""
+
+# ═════════════════════════════════════════════════
+# Fisher
+# ═════════════════════════════════════════════════
+
+echo ""
+echo "-- Fisher --"
+
+if ! command -v fish &>/dev/null; then
+  error "Fish shell is not installed. Skipping {{ .name }}."
+else
+  log "Installing {{ .name }}..."
+  fish -c "curl -sLhttps://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
+  if [ -f "$HOME/.config/fish/fish_plugins" ]; then
+    log "Updating plugins..."
+    fish -c "fisher update"
+  fi
+  ok {{ .name | quote }}
+fi
+

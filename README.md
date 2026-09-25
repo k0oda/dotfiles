@@ -4,7 +4,7 @@ Personal system configuration, managed with [chezmoi].
 
 This setup is intended for **PERSONAL** use only. It may install required packages and be invasive at all. Read sources carefully before applying.
 
-Fedora · Hyprland · DankMaterialShell · Neovim · Zed · kitty · zsh
+Fedora · Hyprland · DankMaterialShell · Neovim · Zed · kitty · fish
 
 ---
 
@@ -17,8 +17,8 @@ Fedora · Hyprland · DankMaterialShell · Neovim · Zed · kitty · zsh
 | Shell | [DankMaterialShell] |
 | Terminal | [kitty] |
 | Editor | [Neovim] + [Zed] |
-| Shell | [Zsh] + [Oh My Zsh] |
-| Prompt | [Oh My Posh] |
+| Shell | [fish] + [fisher] |
+| Prompt | [Starship] |
 | Fonts | FiraCode Nerd Font, JetBrains Mono Nerd Font |
 | Icons | [WhiteSur] |
 
@@ -88,7 +88,6 @@ Fetched automatically by chezmoi via `.chezmoiexternal.toml`:
 
 - **FiraCode** and **JetBrains Mono** Nerd Fonts - always latest GitHub release
 - **WhiteSur icon theme** — git repo, refreshed weekly
-- **oh-my-zsh** + plugins
 
 ---
 
@@ -98,7 +97,7 @@ Fetched automatically by chezmoi via `.chezmoiexternal.toml`:
 [kitty]: https://sw.kovidgoyal.net/kitty/
 [Neovim]: https://neovim.io/
 [Zed]: https://zed.dev/
-[Zsh]: https://www.zsh.org/
-[Oh My Zsh]: https://ohmyz.sh/
-[Oh My Posh]: https://ohmyposh.dev/
+[fish]: https://fishshell.com/
+[fisher]: https://github.com/jorgebucaran/fisher
+[Starship]: https://starship.rs/
 [WhiteSur]: https://github.com/vinceliuice/WhiteSur-icon-theme
