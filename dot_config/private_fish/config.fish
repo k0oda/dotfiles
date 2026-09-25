@@ -27,7 +27,7 @@ if status is-interactive
     end
 
     # -----------------------------------------------------
-    # Aliases
+    # Aliases & Abbreviations
     # -----------------------------------------------------
 
     # ls -> eza
@@ -50,5 +50,8 @@ if status is-interactive
     # Core utils
     alias diff="diff --color=auto"
     alias df="df -h"
+
+    abbr -a lg lazygit
+    abbr -a lzd lazydocker
 
 end
