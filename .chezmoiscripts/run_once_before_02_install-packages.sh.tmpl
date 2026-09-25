@@ -164,10 +164,6 @@ ok {{ .name | quote }}
 {{- end }}
 {{- end }}
 
-echo ""
-echo "  All packages installed."
-echo ""
-
 # ═════════════════════════════════════════════════
 # Fisher
 # ═════════════════════════════════════════════════
@@ -186,4 +182,9 @@ else
   fi
   ok {{ .name | quote }}
 fi
+
+echo ""
+echo "  All packages installed."
+echo ""
+
 
