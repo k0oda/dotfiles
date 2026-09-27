@@ -180,6 +180,14 @@ else
     log "Updating plugins..."
     fish -c "fisher update"
   fi
+
+  if [ "$SHELL" != "$(command -v fish)" ]; then
+    log "Switching default shell to Fish..."
+    chsh -s "$(command -v fish)"
+  else
+    log "Fish is already the default shell."
+  fi
+
   ok "Fisher"
 fi
 

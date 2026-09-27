@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+
+# config.toml hash: {{ include "dot_config/greetd/config.toml" | sha256sum }}
+# hypr.lua hash:    {{ include "dot_config/greetd/hypr.lua" | sha256sum }}
+
+set -euo pipefail
+
+log() { echo "  [greetd] $*"; }
+ok() { echo "  [greetd] ✓ $*"; }
+
+echo ""
+echo "══════════════════════════════════════════════"
+echo "  Setting up greetd (DankGreeter)"
+echo "══════════════════════════════════════════════"
+
+# ═════════════════════════════════════════════════
+# Deploy config
+# ═════════════════════════════════════════════════
+
+echo ""
+echo "-- Deploying configs --"
+
+if [[ ! -d /etc/greetd ]]; then
+  log "Creating /etc/greetd..."
+  sudo mkdir -p /etc/greetd
+fi
+
+log "Copying config.toml → /etc/greetd/config.toml"
+sudo cp "{{ .chezmoi.sourceDir }}/dot_config/greetd/config.toml" /etc/greetd/config.toml
+sudo chmod 644 /etc/greetd/config.toml
+sudo chown root:root /etc/greetd/config.toml
+
+log "Copying hypr.lua → /etc/greetd/hypr.lua"
+sudo cp "{{ .chezmoi.sourceDir }}/dot_config/greetd/hypr.lua" /etc/greetd/hypr.lua
+sudo chmod 644 /etc/greetd/hypr.lua
+sudo chown root:root /etc/greetd/hypr.lua
+
+ok "Configs deployed"
+
+# ═════════════════════════════════════════════════
+# Restart / enable service
+# ═════════════════════════════════════════════════
+
+echo ""
+echo "-- greetd service --"
+
+if systemctl is-active --quiet greetd; then
+  log "Restarting greetd..."
+  sudo systemctl restart greetd
+  ok "greetd restarted"
+else
+  log "Enabling and starting greetd..."
+  sudo systemctl enable --now greetd
+  ok "greetd enabled and started"
+fi
+
+echo ""
+
