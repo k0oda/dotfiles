@@ -139,7 +139,7 @@ hl.bind("SUPER + CTRL + SHIFT + mouse_down", hl.dsp.window.swap({ next = true })
 hl.bind("SUPER + CTRL + SHIFT + mouse_up", hl.dsp.window.swap({ prev = true }))
 
 -- === Touchpad Gestures ===
-hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
+hl.gesture({ fingers = 3, direction = "vertical", action = "workspace" })
 
 -- === Numbered Workspaces ===
 hl.bind("SUPER + 1", hl.dsp.focus({ workspace = "1" }))
