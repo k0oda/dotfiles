@@ -172,15 +172,15 @@ echo ""
 echo "-- Fisher --"
 
 if ! command -v fish &>/dev/null; then
-  error "Fish shell is not installed. Skipping {{ .name }}."
+  error "Fish shell is not installed. Skipping Fisher."
 else
-  log "Installing {{ .name }}..."
-  fish -c "curl -sLhttps://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
+  log "Installing Fisher..."
+  fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
   if [ -f "$HOME/.config/fish/fish_plugins" ]; then
     log "Updating plugins..."
     fish -c "fisher update"
   fi
-  ok {{ .name | quote }}
+  ok "Fisher"
 fi
 
 echo ""
