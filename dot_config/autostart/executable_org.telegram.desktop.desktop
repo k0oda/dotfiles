@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Telegram Desktop
+Comment=Official desktop version of Telegram messaging app
+Exec=flatpak run org.telegram.desktop -startintray
+X-Flatpak=org.telegram.desktop
