@@ -91,8 +91,8 @@ to_remove = []
 # [packages.go.common]
 #     packages = []
 
-# [packages.go.dev]
-#     packages = []
+[packages.go.dev]
+packages = ["github.com/jorgerojas26/lazysql@latest"]
 
 [packages.go.containers]
 packages = ["github.com/jesseduffield/lazydocker@latest"]
