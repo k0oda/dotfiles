@@ -53,5 +53,6 @@ if status is-interactive
 
     abbr -a lg lazygit
     abbr -a lzd lazydocker
+    abbr -a lsql lazysql
 
 end
