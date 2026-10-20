@@ -11,7 +11,7 @@ packages = [
   "cava",
   "cliphist",
   "curl",
-  "dankcalendar-git",
+  "dcal",
   "dnf5-plugins",
   "dsearch",
   "eza",
