@@ -51,9 +51,10 @@
     "modalDisplayMode": "modal",
     "modalScaleToContent": true,
     "recordMic": false,
-    "recordSystemAudio": true,
+    "recordSystemAudio": false,
     "showToolbar": true,
     "skipConfirm": false,
-    "postNotification": "notification"
+    "postNotification": "notification",
+    "includeCursor": false
   }
 }

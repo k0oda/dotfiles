@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "configurations": [
+    {
+      "id": "auto_be9ea53",
+      "name": "",
+      "outputs": {
+        "Dell Inc. DELL U2518D 3C4YP99HARBL": {
+          "mode": "2560x1440@59.951",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "scale": 1,
+          "transform": "Normal",
+          "vrr": false,
+          "disabled": false,
+          "hyprland": {}
+        }
+      }
+    },
+    {
+      "id": "auto_6a3aa7d5",
+      "name": "",
+      "outputs": {
+        "Dell Inc. DELL U2518D 3C4YP99HARBL": {
+          "mode": "2560x1440@59.951",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "scale": 1,
+          "transform": "Normal",
+          "vrr": false,
+          "disabled": false,
+          "niri": {}
+        }
+      }
+    }
+  ]
+}

@@ -6,10 +6,23 @@ hl.config({
 		gaps_out = 4,
 		border_size = 2,
 		resize_on_border = false,
+		layout = "master",
+	},
+	master = {
+		orientation = "left",
+		new_status = "slave",
+		new_on_top = false,
+		mfact = 0.5,
 	},
 	decoration = {
-		rounding = 12,
+		rounding = 16,
+		blur = {
+			passes = 2,
+		},
 	},
 })
+
+-- Hand-written or migrated hyprland.lua often lacks this; tweened island lifts misplace the drag pointer.
+hl.layer_rule({ match = { namespace = "^dms:dankisland$" }, no_anim = true })
 
 -- bar-xray off

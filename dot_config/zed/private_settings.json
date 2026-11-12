@@ -194,7 +194,9 @@
   },
   "prettier": {},
   "agent": {
-    "sidebar_side": "right",
+    "threads_sidebar": {
+      "position": "right"
+    },
     "flexible": false,
     "inline_assistant_model": {
       "provider": "copilot_chat",

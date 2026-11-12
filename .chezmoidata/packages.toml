@@ -29,6 +29,7 @@ packages = [
   "ImageMagick",
   "img2pdf",
   "keyd",
+  "kf6-kimageformats",
   "khal",
   "libappindicator-gtk3",
   "libdbusmenu-gtk3",

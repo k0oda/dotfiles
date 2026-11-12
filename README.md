@@ -4,7 +4,7 @@ Personal system configuration, managed with [chezmoi].
 
 This setup is intended for **PERSONAL** use only. It may install required packages and be invasive at all. Read sources carefully before applying.
 
-Fedora · Hyprland · DankMaterialShell · Neovim · Zed · kitty · fish
+Fedora · Hyprland · DuxModularShell · Neovim · Zed · kitty · fish
 
 ---
 
@@ -14,7 +14,7 @@ Fedora · Hyprland · DankMaterialShell · Neovim · Zed · kitty · fish
 |---|---|
 | Distro | Fedora |
 | Compositor | [Hyprland] |
-| Shell | [DankMaterialShell] |
+| Shell | [DuxModularShell] |
 | Terminal | [kitty] |
 | Editor | [Neovim] + [Zed] |
 | Shell | [fish] + [fisher] |
@@ -26,10 +26,10 @@ Fedora · Hyprland · DankMaterialShell · Neovim · Zed · kitty · fish
 
 ## Install
  
-**1. Install DankMaterialShell**
+**1. Install DuxModularShell**
  
 ```sh
-curl -fsSL https://install.danklinux.com | sh
+curl -fsSL https://install.duxlabs.dev | sh█
 ```
  
 **2. Install chezmoi**
@@ -77,7 +77,7 @@ after_02   ->  DMS plugins installed
 after_03   ->  keyd config deployed & service started
 ```
 
-Config directories for `Hyprland` and `DankMaterialShell` are skipped automatically
+Config directories for `Hyprland` and `DuxModularShell` are skipped automatically
 if aren't installed.
 
 ---
@@ -93,7 +93,7 @@ Fetched automatically by chezmoi via `.chezmoiexternal.toml`:
 
 [chezmoi]: https://www.chezmoi.io/
 [Hyprland]: https://hypr.land/
-[DankMaterialShell]: https://danklinux.com/
+[DuxModularShell]: https://duxlabs.dev/
 [kitty]: https://sw.kovidgoyal.net/kitty/
 [Neovim]: https://neovim.io/
 [Zed]: https://zed.dev/
