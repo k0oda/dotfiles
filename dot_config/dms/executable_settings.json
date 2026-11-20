@@ -123,6 +123,12 @@
       "small": true,
       "col": 7,
       "row": 0
+    },
+    {
+      "id": "builtin_tailscale",
+      "enabled": true,
+      "w": 4,
+      "h": 1
     }
   ],
   "spotlightSectionViewModes": {
@@ -359,7 +365,7 @@
       "widgetStyle": "pills",
       "islandSatellitesEnabled": true,
       "islandMediaClockVisible": true,
-      "islandMediaAutoSwitch": true,
+      "islandMediaAutoSwitch": false,
       "islandNotificationPopups": false,
       "islandRouteNotificationCenter": "follow",
       "islandSatelliteGap": 12,
@@ -543,7 +549,7 @@
       "autoHide": false,
       "smartAutoHide": true,
       "useOverlayLayer": false,
-      "editOnRightClick": true,
+      "editOnRightClick": false,
       "showOnFullscreen": false,
       "openOnOverview": false,
       "groupByApp": true,
@@ -991,5 +997,6 @@
   "mouseNaturalScroll": false,
   "mouseAccelProfile": "flat",
   "keyboardLayouts": "us,ru",
-  "keyboardOptions": "caps:super"
+  "keyboardOptions": "caps:super",
+  "terminalPalette": "default"
 }
