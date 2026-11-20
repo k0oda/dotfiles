@@ -12,7 +12,7 @@ Fedora · Hyprland · DuxModularShell · Neovim · Zed · kitty · fish
 
 | Layer | Tool |
 |---|---|
-| Distro | Fedora |
+| Distro | [Fedora] |
 | Compositor | [Hyprland] |
 | Shell | [DuxModularShell] |
 | Terminal | [kitty] |
@@ -92,6 +92,7 @@ Fetched automatically by chezmoi via `.chezmoiexternal.toml`:
 ---
 
 [chezmoi]: https://www.chezmoi.io/
+[Fedora]: https://fedoraproject.org/
 [Hyprland]: https://hypr.land/
 [DuxModularShell]: https://duxlabs.dev/
 [kitty]: https://sw.kovidgoyal.net/kitty/
